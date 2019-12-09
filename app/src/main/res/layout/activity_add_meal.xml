@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.AddMeal">
+
+    <TextView
+        android:id="@+id/tv_addmembermeal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="Add Member's Meal:"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_select_date"
+        android:layout_width="380dp"
+        android:layout_height="45dp"
+        android:onClick="selectDateonClick"
+        android:layout_below="@+id/tv_addmembermeal"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttonstyle1"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="Select Date"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_setmember_andAddmeal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_select_date"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Selete Member and Add Meal"
+        android:textColor="#2e2e2e"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/lout_bld"
+        android:paddingRight="1dp"
+        android:layout_below="@+id/tv_setmember_andAddmeal"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Username"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Breakfast"
+            android:layout_marginLeft="65dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Lanch"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Dinner"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Check Meal"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_recyclerviewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lout_bld"
+        android:layout_above="@+id/tv_insert_today"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_add_mealId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/item_add_meal" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_insert_today"
+        android:layout_width="380dp"
+        android:layout_height="45dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/buttonstyle1"
+        android:padding="3dp"
+        android:text="Update Meal"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

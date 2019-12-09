@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.AddDailyCost">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Add Daily Cost Info:"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/bt_datePickerId"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/buttonstyle1"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"
+        android:onClick="selectDateButtionClick"
+        android:text="select Date"
+        android:textSize="20sp" />
+
+    <EditText
+
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:padding="16dp"
+        android:textColor="#2e2e2e"
+        android:inputType="number"
+        android:id="@+id/add_daily_cost_ammount"
+        android:textAlignment="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:hint="Enter Cost Amount" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Select Shopper's Name:"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/sp_userlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:textAlignment="textEnd" />
+
+
+    <Button
+        android:id="@+id/add_bazar_list_id"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonstyle1"
+        android:onClick="addBazerList"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Add Bazar List(optional)"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        app:cardCornerRadius="12dp">
+
+        <EditText
+            android:id="@+id/et_bazerList_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:background="@drawable/editteststyle"
+            android:hint="#date: 01-2-2019\n1.rice 120 tk\n2.fish 450 tk\n..."
+            android:padding="5dp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/add_daily_cost_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttonstyle1"
+        android:text="Submit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.AddMemberDeposit">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Add Member's Deposit:"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/bt_datePickerId_deposit"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/buttonstyle1"
+        android:onClick="selectDateButtionClick"
+        android:text="select Date"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <EditText
+
+        android:id="@+id/et_user_deposit"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:hint="Enter Deposit Amount"
+        android:inputType="number"
+        android:padding="16dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Select Member Who will Deposit:"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/sp_username_deposit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Spinner"
+        android:paddingLeft="15dp"
+        android:textAlignment="textEnd" />
+
+    <Button
+        android:id="@+id/bt_user_deposit_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/buttonstyle1"
+        android:text="Submit"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

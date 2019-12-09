@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "588836262221",
+    "firebase_url": "https://smartmeal-75782.firebaseio.com",
+    "project_id": "smartmeal-75782",
+    "storage_bucket": "smartmeal-75782.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588836262221:android:b0bdd1d56579776f812704",
+        "android_client_info": {
+          "package_name": "com.example.smartmeal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588836262221-onibg2mh0o1edckf90cd2o48fdg19b82.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartmeal",
+            "certificate_hash": "266f86f232064654580142d23a86a30a62a77711"
+          }
+        },
+        {
+          "client_id": "588836262221-uc6h42dspv7v96ajf0hlev58ske2kt7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVFZS9ZTa31c5As06tueoXvQpWJe2LPzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588836262221-uc6h42dspv7v96ajf0hlev58ske2kt7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

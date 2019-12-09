@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ultrasoftblack"
+    android:gravity="center"
+    android:padding="32dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
+        android:textColor="#2e2e2e"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="Add Time for meal Off"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_start_time_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawableLeft="@drawable/settime"
+        android:background="@drawable/editteststyle"
+        android:hint="start Time"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/et_end_time_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/settime"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/editteststyle"
+        android:hint="End Time"
+        android:padding="10dp" />
+
+
+    <Button
+        android:id="@+id/bt_mealtimeoff_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/buttonstyle1"
+        android:text="submit" />
+
+
+
+
+</LinearLayout>

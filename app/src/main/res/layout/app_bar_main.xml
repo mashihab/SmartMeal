@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/btdarkstylecolor"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/userprofile" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_main_usernameId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manager or user"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <include layout="@layout/content_main" />
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:fab_addButtonColorNormal="@color/btdarkstylecolor"
+        app:fab_addButtonColorPressed="@color/btstylecolor"
+        app:fab_addButtonPlusIconColor="#fff"
+        app:fab_labelStyle="@style/custom_fab">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/btstylecolor"
+            app:fab_colorPressed="@color/btdarkstylecolor"
+            app:fab_icon="@drawable/ic_alarm_on_black_24dp"
+            app:fab_size="mini"
+            app:fab_title="Present Month Details" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/btstylecolor"
+            app:fab_colorPressed="@color/btdarkstylecolor"
+            app:fab_icon="@drawable/money"
+            app:fab_size="mini"
+            app:fab_title="Add Member's Money" />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/btstylecolor"
+            app:fab_colorPressed="@color/btdarkstylecolor"
+            app:fab_icon="@drawable/market"
+            app:fab_size="mini"
+            app:fab_title="Add Daily Cost" />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/btstylecolor"
+            app:fab_colorPressed="@color/btdarkstylecolor"
+            app:fab_icon="@drawable/ic_favorite_border_black_24dp"
+            app:fab_size="mini"
+            app:fab_title="Add Meal" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+</RelativeLayout>
