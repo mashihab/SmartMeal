@@ -4,34 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login2"
     android:gravity="center"
-    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ui.loginsignup.Login">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/transparentlayout"
+        android:layout_width="match_parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_height="300dp">
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="#2e2e2e"
             android:text="Log In As"
             android:textSize="25dp" />
 
         <Spinner
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="6dp"
             android:id="@+id/spinner_calculator_id"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp" />
     </LinearLayout>
-
 
 
     <EditText
@@ -39,43 +49,44 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/edittext_dark_gray"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:paddingLeft="20dp"
-        android:hint="username" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="username"
+         />
 
     <EditText
         android:id="@+id/et_password_id"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@drawable/edittext_dark_gray"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="20dp"
-        android:hint="password" />
+        android:background="@drawable/edittext_dark_gray"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp" />
 
     <Button
         android:id="@+id/bt_login_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#fff"
-        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/buttonstyle1"
         android:onClick="buttonLogin"
         android:text="Login Mess"
-         />
+        android:textColor="#fff"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/bt_go_signup_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/buttonstyle1"
         android:onClick="goSignUpPage"
         android:text="Not Yet registerd?Sign Up"
@@ -87,6 +98,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Forget Mess Password" />
+        android:id="@+id/forgetpass"
+        android:layout_marginTop="10dp"
+        android:textColor="#2e2e2e"
+        android:text="Forget Mess Password"
+        tools:ignore="OnClick" />
+
+    </LinearLayout>
 
 </LinearLayout>

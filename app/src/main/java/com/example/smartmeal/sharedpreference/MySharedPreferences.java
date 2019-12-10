@@ -81,4 +81,28 @@ public class MySharedPreferences {
         return sharedPreferences.getString("uniqueId","null");
     }
 
+
+    public void setStartTime(String stime)
+    {
+        editor.putString("starttime",stime);
+        editor.apply();
+    }
+
+    public String getStartTime()
+    {
+        return sharedPreferences.getString("starttime","040000");
+    }
+
+
+    public void setEndTime(String etime)
+    {
+        editor.putString("endtime",etime);
+        editor.apply();
+    }
+
+    public String getEndTime()
+    {
+        return sharedPreferences.getString("endtime","090000");
+    }
+
 }

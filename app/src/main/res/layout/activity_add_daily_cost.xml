@@ -54,6 +54,8 @@
         android:id="@+id/sp_userlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:paddingLeft="15dp"
         android:textAlignment="textEnd" />
 
@@ -65,8 +67,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle1"
         android:onClick="addBazerList"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:text="Add Bazar List(optional)"
         android:textColor="#fff"
         android:textSize="20sp" />
@@ -74,9 +76,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+        android:layout_marginRight="30dp"
         android:background="@color/white"
         app:cardCornerRadius="12dp">
 
@@ -99,8 +102,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/buttonstyle1"
         android:text="Submit"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:textColor="#fff"
         android:textSize="20sp" />
 

@@ -54,6 +54,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Spinner"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:paddingLeft="15dp"
         android:textAlignment="textEnd" />
 
@@ -61,9 +63,9 @@
         android:id="@+id/bt_user_deposit_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/buttonstyle1"
         android:text="Submit"
         android:textColor="#fff"

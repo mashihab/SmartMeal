@@ -106,8 +106,17 @@ public interface ApiInterface {
     Call<ModelUsers> userLogin(@Query("username") String Username, @Query("password") String Password);
 
 
+ //get meal off on time by sending uniqueToken
+    @GET("get_meal_offon_time.php")
+    Call<ModelInsertadminDetails> getoffonTime(@Query("muniquetoken") String Muniquetoken);
+
 
     @GET("loginMember.php")
     Call<ModelUsers> loginMember(@Query("username") String Username, @Query("password") String Password);
+
+    //update password
+    @GET("change_password.php")
+    Call<ModelUsers> changepassword(@Query("username") String Username, @Query("password") String Password);
+
 
 }

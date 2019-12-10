@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.smartmeal.MainActivity;
@@ -20,6 +21,7 @@ import com.example.smartmeal.retrofit.ApiInterface;
 import com.example.smartmeal.sharedpreference.MySharedPreferences;
 import com.example.smartmeal.ui.AddDailyCost;
 import com.example.smartmeal.ui.AddMeal;
+import com.example.smartmeal.ui.ForgetPass;
 import com.example.smartmeal.ui.UserActivity;
 
 import java.util.ArrayList;
@@ -36,6 +38,7 @@ public class Login extends AppCompatActivity {
     private Spinner spinner;
     private List<String> type;
     EditText Username,Password;
+    TextView forgetpass;
     ApiInterface apiInterface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class Login extends AppCompatActivity {
         bt_signupPage = findViewById(R.id.bt_go_signup_page);
         bt_login_mess = findViewById(R.id.bt_login_id);
         spinner = findViewById(R.id.spinner_calculator_id);
+        forgetpass = findViewById(R.id.forgetpass);
 
         Username = findViewById(R.id.et_username_id);
         Password = findViewById(R.id.et_password_id);
@@ -59,6 +63,17 @@ public class Login extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(dataAdapter);
+
+
+        forgetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgetPass.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     public void goSignUpPage(View view) {

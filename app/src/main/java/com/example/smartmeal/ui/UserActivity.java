@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.smartmeal.MainActivity;
 import com.example.smartmeal.R;
 import com.example.smartmeal.model.ModelAddMeal;
+import com.example.smartmeal.model.ModelInsertadminDetails;
 import com.example.smartmeal.model.ModelUsers;
 import com.example.smartmeal.retrofit.ApiClint;
 import com.example.smartmeal.retrofit.ApiInterface;
@@ -102,12 +103,15 @@ public class UserActivity extends AppCompatActivity {
 
         int timecheck = Integer.parseInt(dateTime);
 
-        if (timecheck>123400 && timecheck<123500){
+        int startTime = Integer.parseInt(sharedPreferences.getStartTime());
+        int endTime = Integer.parseInt(sharedPreferences.getEndTime());
 
-            aSwitch.setVisibility(View.GONE);
+        if (timecheck>startTime && timecheck<endTime){
+
+            aSwitch.setVisibility(View.VISIBLE);
         }else
         {
-            aSwitch.setVisibility(View.VISIBLE);
+            aSwitch.setVisibility(View.GONE);
         }
 
 
@@ -144,32 +148,33 @@ public class UserActivity extends AppCompatActivity {
         Retrofit instance = ApiClint.instance();
         ApiInterface apiInterface = instance.create(ApiInterface.class);
 
-        ModelAddMeal modelAddMeal = new ModelAddMeal();
+
+        String uniqueToken = getIntent().getStringExtra("uniquetoken");
 
 
-
-
-
-        modelAddMeal.setAdminuniquetoken(getIntent().getStringExtra("uniquetoken"));
-
-        apiInterface.getAllMealData(modelAddMeal).enqueue(new Callback<List<ModelAddMeal>>() {
+        apiInterface.getoffonTime(uniqueToken).enqueue(new Callback<ModelInsertadminDetails>() {
             @Override
-            public void onResponse(Call<List<ModelAddMeal>> call, Response<List<ModelAddMeal>> response) {
+            public void onResponse(Call<ModelInsertadminDetails> call, Response<ModelInsertadminDetails> response) {
+                if (response.body().getResponse().equals("ok"))
+                {
+
+
+                    //SharedPreferences to save user manager
+                    MySharedPreferences sharedPreferences = MySharedPreferences.getPreferences(getApplicationContext());
+                    sharedPreferences.setStartTime(response.body().getStarttime());
+                    sharedPreferences.setEndTime(response.body().getEndtime());
 
 
 
-            //    userList.addAll(response.body());
-                //userAdapter.notifyDataSetChanged();
-
-
+                }
+                else if (response.body().getResponse().equals("failed")){
+                    Toast.makeText(getApplicationContext(), "failed to load", Toast.LENGTH_SHORT).show();
+                }
 
             }
 
             @Override
-            public void onFailure(Call<List<ModelAddMeal>> call, Throwable t) {
-
-                Log.d("wrong",""+t.getMessage());
-
+            public void onFailure(Call<ModelInsertadminDetails> call, Throwable t) {
 
             }
         });
@@ -315,11 +320,17 @@ public class UserActivity extends AppCompatActivity {
         apiInterface.getmesstotalexpense(adminuniquetoken).enqueue(new Callback<ModelAddMeal>() {
             @Override
             public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
-                //mealrate.setText(response.body().getMeal_rate());
 
-                double num = Double.parseDouble(response.body().getMessdailyexpense());
+                if (response.body().getMessdailyexpense().equals("")){
+                    messtotalcost.setText(" 0.00");
+                }else {
+                    mealrate.setText(response.body().getMeal_rate());
 
-                messtotalcost.setText(String.format("%.2f", num));
+                  //  double num = Double.parseDouble(response.body().getMessdailyexpense());
+
+                   // messtotalcost.setText(String.format("%.2f", num));
+                }
+
 
 
             }
@@ -348,9 +359,18 @@ public class UserActivity extends AppCompatActivity {
         apiInterface.getusettotalmeal(adminuniquetoken,username).enqueue(new Callback<ModelAddMeal>() {
             @Override
             public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
-                mymeal.setText(response.body().getUsertotalmeal());
 
-                userTotalMeal = Double.parseDouble(response.body().getUsertotalmeal());
+                if (response.body().getUsertotalmeal().equals("")){
+
+                    mymeal.setText("0.00");
+                }else {
+
+                    mymeal.setText(response.body().getUsertotalmeal());
+
+                    userTotalMeal = Double.parseDouble(response.body().getUsertotalmeal());
+
+                }
+
 
 
             }
@@ -406,10 +426,19 @@ public class UserActivity extends AppCompatActivity {
         apiInterface.gettotalmeal(adminuniquetoken).enqueue(new Callback<ModelAddMeal>() {
             @Override
             public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
-                totalmeal.setText(response.body().getTotalmeal());
 
-                MySharedPreferences sharedPreferences = MySharedPreferences.getPreferences(getApplicationContext());
-                sharedPreferences.setTotalmeal(response.body().getTotalmeal());
+
+                if (response.body().getTotalmeal().equals("")){
+                    totalmeal.setText(" 0.00");
+                }else
+                {
+                    totalmeal.setText(response.body().getTotalmeal());
+
+                    MySharedPreferences sharedPreferences = MySharedPreferences.getPreferences(getApplicationContext());
+                    sharedPreferences.setTotalmeal(response.body().getTotalmeal());
+                }
+
+
 
                 //  Toast.makeText(MainActivity.this, ""+response.body().getTotalmeal(), Toast.LENGTH_SHORT).show();
 

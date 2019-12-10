@@ -174,7 +174,14 @@ public class HomeFragment extends Fragment {
         apiInterface.gettotalmeal(adminuniquetoken).enqueue(new Callback<ModelAddMeal>() {
             @Override
             public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
-                messtotalmeal.setText(response.body().getTotalmeal());
+                if (response.body().getTotalmeal().equals("")){
+                    messtotalmeal.setText(" 0.00");
+                }
+                else
+                {
+                    messtotalmeal.setText(response.body().getTotalmeal());
+                }
+
 
 
             }
@@ -230,9 +237,18 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
                 //mealrate.setText(response.body().getMeal_rate());
 
-                double num = Double.parseDouble(response.body().getMessdailyexpense());
+                //double num = Double.parseDouble(response.body().getMessdailyexpense());
 
-                messtotalcost.setText(String.format("%.2f", num));
+                //messtotalcost.setText(String.format("%.2f", num));
+
+                if (response.body().getMessdailyexpense().equals("")){
+                    messtotalcost.setText(" 0.00");
+                }
+                else
+                {
+                    messtotalcost.setText(response.body().getMessdailyexpense());
+                }
+
 
 
             }
@@ -295,7 +311,7 @@ public class HomeFragment extends Fragment {
 
 
 
-                if (response.body().getUserdeposit()== ""){
+                if (response.body().getUserdeposit().equals("")){
                     mydeposit.setText("0.00");
                 }else {
 
@@ -332,7 +348,15 @@ public class HomeFragment extends Fragment {
            //    userTotalMeal = Double.parseDouble(response.body().getUsertotalmeal());
 
           //     mymeal.setText(""+userTotalMeal);
-                mymeal.setText(response.body().getUsertotalmeal());
+
+                if (response.body().getUsertotalmeal().equals("")){
+                    mymeal.setText("0.00");
+                }else
+                    {
+
+                    mymeal.setText(response.body().getUsertotalmeal());
+                }
+
 
             }
 

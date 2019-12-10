@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,11 +21,14 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
+    ArrayList<ModelAddMeal> insertAllmeal;
     ArrayList<ModelAddMeal> addMeals;
     Context context;
 
+
     CheckBox checkBoxYesNo;
     List<String> breakfast,lunch,dinner;
+
     String userid;
 
     public Adapter(ArrayList<ModelAddMeal> addMeals, Context context) {
@@ -52,6 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         breakfast = new ArrayList<String>();
         breakfast.add("1");
         breakfast.add(".5");
+        breakfast.add("0");
         breakfast.add("1");
         breakfast.add("1.5");
         breakfast.add("2");
@@ -62,10 +67,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         breakfast.add("4.5");
         breakfast.add("5");
 
-
-       /* lunch = new ArrayList<String>();
-        lunch.add("2");
+        lunch = new ArrayList<String>();
+        lunch.add("1");
         lunch.add(".5");
+        lunch.add("0");
         lunch.add("1");
         lunch.add("1.5");
         lunch.add("2");
@@ -74,16 +79,47 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         lunch.add("3.5");
         lunch.add("4");
         lunch.add("4.5");
-        lunch.add("5");*/
+        lunch.add("5");
+
+        dinner = new ArrayList<String>();
+        dinner.add("1");
+        dinner.add(".5");
+        dinner.add("0");
+        dinner.add("1");
+        dinner.add("1.5");
+        dinner.add("2");
+        dinner.add("2.5");
+        dinner.add("3");
+        dinner.add("3.5");
+        dinner.add("4");
+        dinner.add("4.5");
+        dinner.add("5");
 
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item, breakfast);
+        //insertAllmeal.add(""+addMeals.get(position).getUsername());
 
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        holder.breakfast.setAdapter(dataAdapter);
-        holder.lunch.setAdapter(dataAdapter);
-        holder.dinner.setAdapter(dataAdapter);
+
+
+        ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item, breakfast);
+
+        dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item, breakfast);
+
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item, breakfast);
+
+        dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        holder.breakfast.setAdapter(dataAdapter1);
+        holder.lunch.setAdapter(dataAdapter2);
+        holder.dinner.setAdapter(dataAdapter3);
+
+     //   Toast.makeText(context, addMeals.get(position).getUsername()+" "+holder.breakfast.getSelectedItem()+" "+holder.lunch.getSelectedItem()+" "+holder.dinner.getSelectedItem()+" "+addMeals.get(position).getCheckMeal(), Toast.LENGTH_LONG).show();
+
 
 
         String yes = "Yes";
@@ -112,7 +148,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             super(itemView);
 
             name = itemView.findViewById(R.id.tv_name_addmeal);
-
             checkBoxYesNo = itemView.findViewById(R.id.cb_yesNoId);
             breakfast = itemView.findViewById(R.id.sp_breakfastId);
             lunch = itemView.findViewById(R.id.sp_lanchId);

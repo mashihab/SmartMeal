@@ -32,8 +32,17 @@ public class ModelInsertadminDetails {
     @Expose
     private String endtime;
 
+    @SerializedName("response")
+    @Expose
+    private String response;
 
+    public String getResponse() {
+        return response;
+    }
 
+    public void setResponse(String response) {
+        this.response = response;
+    }
 
     public String getStarttime() {
         return starttime;

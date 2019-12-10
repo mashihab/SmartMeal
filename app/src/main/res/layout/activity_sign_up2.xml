@@ -6,7 +6,7 @@
 
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/white"
+    android:background="@drawable/signup"
     tools:context=".ui.loginsignup.SignUp">
 
 
@@ -27,49 +27,81 @@
         android:background="@drawable/uploadimage" />
 
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/image1"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/transparentlayout"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
     <TextView
         android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/image1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#2e2e2e"
         android:gravity="center"
         android:text="Enter Member's Info"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/et_member_userId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:paddingLeft="20dp"
         android:layout_below="@+id/tv1"
         android:hint="Member's Username" />
 
     <EditText
         android:id="@+id/et_member_emailId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp" android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:paddingLeft="20dp"
         android:layout_below="@+id/et_member_userId"
         android:hint="Member's Email Address(valid)" />
 
     <EditText
-        android:id="@+id/et_member_phoneId"
+        android:id="@+id/et_member_phoneId" android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:paddingLeft="20dp"
         android:layout_below="@+id/et_member_emailId"
         android:hint="phone no" />
 
     <EditText
         android:id="@+id/et_member_tokenId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp" android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:paddingLeft="20dp"
         android:layout_below="@+id/et_member_phoneId"
         android:hint="manager unique token"
         android:visibility="gone" />
 
     <EditText
         android:id="@+id/et_member_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_dark_gray"
+        android:paddingLeft="20dp"
         android:layout_below="@+id/et_member_tokenId"
         android:hint="password"
      />
@@ -80,6 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_member_password"
         android:gravity="center"
+        android:textColor="#2e2e2e"
         android:text="Are You Manager?"
         android:textSize="20dp" />
 
@@ -112,13 +145,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radio_group"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/buttonstyle1"
         android:text="New Profile Create"
         android:textAllCaps="false"
         android:textColor="#fff"
+        android:layout_marginBottom="20dp"
         android:textSize="20sp" />
-
+    </LinearLayout>
 
 </RelativeLayout>

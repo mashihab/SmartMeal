@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,19 +77,27 @@ public class AddDailyCost extends AppCompatActivity implements DatePickerDialog.
                 int dailycost = Integer.parseInt(addDailyCost.getText().toString());
                 String bazar_list = et_bazerList.getText().toString();
                 String date = selectDate.getText().toString();
+                String empty_bazar_list = "none";
+
+                if(TextUtils.isEmpty(bazar_list)){
+                    ModelDailyCost modelDailyCost = new ModelDailyCost();
+                    modelDailyCost.setUsername(username);
+                    modelDailyCost.setUniquetoken(uniquetoken);
+                    modelDailyCost.setDaily_expense(dailycost);
+                    modelDailyCost.setBazar_list(empty_bazar_list);
+                    modelDailyCost.setDate(date);
+                    sendData(modelDailyCost);
+                }else {
+                    ModelDailyCost modelDailyCost = new ModelDailyCost();
+                    modelDailyCost.setUsername(username);
+                    modelDailyCost.setUniquetoken(uniquetoken);
+                    modelDailyCost.setDaily_expense(dailycost);
+                    modelDailyCost.setBazar_list(bazar_list);
+                    modelDailyCost.setDate(date);
+                    sendData(modelDailyCost);
+                }
 
 
-
-                ModelDailyCost modelDailyCost = new ModelDailyCost();
-                modelDailyCost.setUsername(username);
-                modelDailyCost.setUniquetoken(uniquetoken);
-                modelDailyCost.setDaily_expense(dailycost);
-                modelDailyCost.setBazar_list(bazar_list);
-                modelDailyCost.setDate(date);
-
-
-
-                sendData(modelDailyCost);
 
 
 

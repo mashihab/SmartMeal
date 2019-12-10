@@ -104,6 +104,14 @@ public class AddMeal extends AppCompatActivity implements DatePickerDialog.OnDat
        });
 
 
+       /*insertallmeal.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Adapter adapter = new Adapter(addMeals,AddMeal.this);
+               Toast.makeText(context, addMeals.get(position).getUsername()+holder.breakfast.getSelectedItem()+addMeals.get(position).getCheckMeal(), Toast.LENGTH_SHORT).show();
+           }
+       });*/
+
     }
 
 

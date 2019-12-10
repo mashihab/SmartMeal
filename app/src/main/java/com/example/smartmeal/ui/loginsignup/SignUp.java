@@ -132,6 +132,18 @@ public class SignUp extends AppCompatActivity {
                             sendData(modelInsertadminDetails);
 
 
+                            ModelInsertUserDetails modelInsertUserDetails = new ModelInsertUserDetails();
+                            modelInsertUserDetails.setUsername(getUsername);
+                            modelInsertUserDetails.setEmail(getemail);
+                            modelInsertUserDetails.setPhone(getPhone);
+                            modelInsertUserDetails.setPassword(getPassword);
+                            modelInsertUserDetails.setAdminuniquetoken(getUniquetoken);
+
+
+
+                            sendDatauser(modelInsertUserDetails);
+
+
                         }
                         
                     }catch (Exception e){
