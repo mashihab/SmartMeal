@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.smartmeal.R;
+import com.example.smartmeal.sharedpreference.MySharedPreferences;
 
 public class GalleryFragment extends Fragment {
 
@@ -23,11 +25,15 @@ public class GalleryFragment extends Fragment {
         galleryViewModel =
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
+        final EditText uniqueToken = root.findViewById(R.id.et_unique_token);
         galleryViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                MySharedPreferences sharedPreferences = MySharedPreferences.getPreferences(getContext());
+
+              String uniquetoken =  sharedPreferences.getUniqueId();
+
+              uniqueToken.setText(uniquetoken);
             }
         });
         return root;

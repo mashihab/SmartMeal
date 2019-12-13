@@ -25,6 +25,30 @@ public class ModelAddMeal {
     @SerializedName("username")
     @Expose
     private String username;
+    @SerializedName("uniquetoken")
+    @Expose
+    private String uniquetoken;
+
+    public String getUniquetoken() {
+        return uniquetoken;
+    }
+
+    @SerializedName("date")
+    @Expose
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setUniquetoken(String uniquetoken) {
+        this.uniquetoken = uniquetoken;
+    }
+
     @SerializedName("check_meal")
     @Expose
     private String checkMeal;

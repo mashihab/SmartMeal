@@ -119,4 +119,10 @@ public interface ApiInterface {
     Call<ModelUsers> changepassword(@Query("username") String Username, @Query("password") String Password);
 
 
+
+
+//add daily meal test case
+    @POST("add_meal_test.php")
+    Call<ModelAddMeal> addDailyMeal(@Body ModelAddMeal modelAddMeal);
+
 }

@@ -52,7 +52,7 @@
                 android:drawableLeft="@drawable/wallet_two"
                 android:text="  Mess Balance                    : "
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_mess_total_balance"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="15dp"
                 android:text=" 0.00"
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -77,7 +77,7 @@
                 android:drawableLeft="@drawable/debit_two"
                 android:text="  Mess Total cost                : "
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_mess_total_cost"
@@ -86,7 +86,7 @@
                 android:layout_marginTop="15dp"
                 android:text=" 0.00"
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -102,7 +102,7 @@
                 android:drawableLeft="@drawable/clipboards_two"
                 android:text="  Mess meal rate                  : "
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_meal_rate"
@@ -111,7 +111,7 @@
                 android:layout_marginTop="15dp"
                 android:text=" 0.00"
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
 
@@ -129,7 +129,7 @@
                 android:drawableLeft="@drawable/meal_two"
                 android:text="  Mess total meal                 : "
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_user_totalmeal"
@@ -138,7 +138,7 @@
                 android:layout_marginTop="15dp"
                 android:text=" 0.00"
                 android:textColor="#2e2e2e"
-                android:textSize="12dp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
 
@@ -158,15 +158,16 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Personal Info"
-            android:textColor="#2e2e2e" />
+            android:textColor="#2e2e2e"
+            android:textSize="20dp" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
 
@@ -189,14 +190,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="0.00"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
-                    android:text="My Meal" />
+                    android:text="My Meal"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
 
 
             </RelativeLayout>
@@ -219,14 +222,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="0.00"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
-                    android:text="My Deposit" />
+                    android:text="My Deposit"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
 
 
             </RelativeLayout>
@@ -249,14 +254,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="0.00"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
-                    android:text="My Cost" />
+                    android:text="My Cost"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -278,14 +285,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="0.00"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
-                    android:text="Balance" />
+                    android:text="Balance"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -298,7 +307,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:layout_below="@id/card_view_1"
         android:layout_margin="4dp"
         app:cardCornerRadius="6dp">
@@ -307,18 +316,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="20dp"
             android:text="My Bazar Date"
             android:textColor="#2e2e2e" />
 
         <TextView
+            android:id="@+id/bazarId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"
             android:text="Not set Yet"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"
+            android:background="@drawable/roundgray"
             android:textColor="@color/red"
-            android:textSize="10dp" />
+            android:textSize="14dp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

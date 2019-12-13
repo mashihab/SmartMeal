@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
@@ -18,10 +19,8 @@ import com.example.smartmeal.model.ModelAddMeal;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
-    ArrayList<ModelAddMeal> insertAllmeal;
     ArrayList<ModelAddMeal> addMeals;
     Context context;
 
@@ -49,7 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
         holder.name.setText(""+addMeals.get(position).getUsername());
 
@@ -99,8 +98,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         //insertAllmeal.add(""+addMeals.get(position).getUsername());
 
 
-
-
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(context,android.R.layout.simple_spinner_item, breakfast);
 
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -117,6 +114,51 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         holder.breakfast.setAdapter(dataAdapter1);
         holder.lunch.setAdapter(dataAdapter2);
         holder.dinner.setAdapter(dataAdapter3);
+
+        holder.breakfast.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                addMeals.get(position).setBreakfast(parent.getItemAtPosition(pos).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        holder.lunch.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                addMeals.get(position).setLunch(parent.getItemAtPosition(pos).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        holder.dinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                addMeals.get(position).setDinner(parent.getItemAtPosition(pos).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+        addMeals.get(position).setBreakfast(holder.lunch.getSelectedItem().toString());
+        addMeals.get(position).setBreakfast(holder.dinner.getSelectedItem().toString());
+
+
+
+
 
      //   Toast.makeText(context, addMeals.get(position).getUsername()+" "+holder.breakfast.getSelectedItem()+" "+holder.lunch.getSelectedItem()+" "+holder.dinner.getSelectedItem()+" "+addMeals.get(position).getCheckMeal(), Toast.LENGTH_LONG).show();
 
@@ -137,6 +179,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public int getItemCount() {
         return addMeals.size();
+    }
+
+    public ArrayList<ModelAddMeal> getAllData() {
+
+        return addMeals;
+
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

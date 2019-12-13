@@ -291,9 +291,16 @@ public class UserActivity extends AppCompatActivity {
             public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
                 //mealrate.setText(response.body().getMeal_rate());
 
-                double num = Double.parseDouble(response.body().getUserdeposit());
+                if (response.body().getUserdeposit().equals("")){
+                    eachuserdeposit.setText(" 0.00");
+                }
+                else
+                {
+                    double num = Double.parseDouble(response.body().getUserdeposit());
 
-                eachuserdeposit.setText(String.format("%.2f", num));
+                    eachuserdeposit.setText(String.format("%.2f", num));
+                }
+
 
 
             }
@@ -324,7 +331,7 @@ public class UserActivity extends AppCompatActivity {
                 if (response.body().getMessdailyexpense().equals("")){
                     messtotalcost.setText(" 0.00");
                 }else {
-                    mealrate.setText(response.body().getMeal_rate());
+                    messtotalcost.setText(response.body().getMessdailyexpense());
 
                   //  double num = Double.parseDouble(response.body().getMessdailyexpense());
 
@@ -399,9 +406,17 @@ public class UserActivity extends AppCompatActivity {
           public void onResponse(Call<ModelAddMeal> call, Response<ModelAddMeal> response) {
               //mealrate.setText(response.body().getMeal_rate());
 
-          meal_rate = Double.parseDouble(response.body().getMeal_rate());
+              if (response.body().getMeal_rate().equals(""))
+              {
+                  mealrate.setText(" 0.00");
+              }
+              else {
+                  meal_rate = Double.parseDouble(response.body().getMeal_rate());
 
-              mealrate.setText(String.format("%.2f", meal_rate));
+                  mealrate.setText(String.format("%.2f", meal_rate));
+              }
+
+
 
 
           }
